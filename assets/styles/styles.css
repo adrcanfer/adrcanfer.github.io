@@ -34,6 +34,7 @@ body {
 .name {
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
 .job {
@@ -71,5 +72,10 @@ body {
 
 hr {
     border: 5px solid #7f8c99;
+}
+
+.item-date {
+    color: #7f8c99;
+    font-weight: bold;
 }
 
