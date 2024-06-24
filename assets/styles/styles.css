@@ -80,3 +80,7 @@ hr {
     font-weight: bold;
 }
 
+.legend {
+    display: flex;
+    justify-content: center;
+}
