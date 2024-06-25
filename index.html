@@ -128,7 +128,7 @@
             <div class="section-content mx-3">
                 <div class="section-item">
                     <div class="item-title fw-bold text-uppercase">Proyecto del sector sanitario</div>
-                    <div class="item-description mx-3 text-justify mx-3">
+                    <div class="item-description text-justify mt-3 mx-3">
                         Líder técnico de los equipos de backend y frontend para un proyecto multiplataforma en el sector sanitario, gestionando el equipo de desarrollo, analizando los requisitos, diseñando la solución y participando en las tareas de implementación, pruebas y despliegue. Además, participo en la gestión del cliente, manteniendo una comunicación constante para tomar requisitos y validar las entregas.
                     </div>
                     <div class="item-technologies mt-3 mx-3"><strong>Tecnologías involucradas:</strong> Java 11, JavaScript & TypeScript, Firebase, Docker, Podman, K8S (OpenShift y OKD), Helm y CA Api Gateway, Grafana, Jaeger.</div>
@@ -136,7 +136,7 @@
         
                 <div class="section-item mt-5">
                     <div class="item-title fw-bold text-uppercase">Proyecto del sector bancario</div>
-                    <div class="item-description text-justify mx-3">
+                    <div class="item-description text-justify mt-3 mx-3">
                         Miembro del equipo de desarrollo para un proyecto bancario donde se desarrolló e implementó un gestor de tareas, realizando tareas de implementación, pruebas y despliegue en el entorno de desarrollo, así como el análisis de incidencias y sus correcciones.
                     </div>
                     <div class="item-technologies mt-3 mx-3"><strong>Tecnologías involucradas:</strong> Java, Spring Boot, Spring Security, Spring Data, Angular, K8S (OpenShift), Red Hat BPM, Keycloak.</div>
@@ -144,7 +144,7 @@
         
                 <div class="section-item mt-5">
                     <div class="item-title fw-bold text-uppercase">Proyecto del sector bancario</div>
-                    <div class="item-description text-justify mx-3">
+                    <div class="item-description text-justify mt-3 mx-3">
                         Miembro del equipo de desarrollo de una aplicación web para la gestión de activos de un cliente en el sector bancario, participando en la implementación y pruebas de la solución.
                     </div>
                     <div class="item-technologies mt-3 mx-3"><strong>Tecnologías involucradas:</strong> Angular, Spring Boot, PostgreSQL.</div>
@@ -152,7 +152,7 @@
         
                 <div class="section-item mt-5">
                     <div class="item-title fw-bold text-uppercase">Proyectos personales</div>
-                    <div class="item-description text-justify mx-3">
+                    <div class="item-description text-justify mt-3 mx-3">
                         En mi tiempo libre, he desarrollado varios proyectos utilizando servicios serverless de AWS. Además, tengo varias aplicaciones publicadas en Google Play.
                     </div>
                     <div class="item-technologies mt-3 mx-3"><strong>Tecnologías involucradas:</strong> API Gateway, Lambda (JavaScript), S3, DynamoDB, Cognito, CDK, SAM, Angular y Amplify.</div>
@@ -176,12 +176,59 @@
                 <div class="section-item ms-3"><span class="item-date">2023: </span> Master Class de Docker y  Docker Compose (Deloitte - España)</div>
                 <div class="section-item ms-3"><span class="item-date">2024: </span> Podman y DevContainer (Universidad de Sevilla) </div>
             </div>
+            <div class="gallery row mt-3">
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="gallery-item" data-image="./assets/images/techtalks/safa.jpg" data-caption="Taller de Docker (Colegio SAFA - Sevilla)">
+                        <div class="img-container">
+                            <img src="./assets/images/techtalks/safa.jpg" class="img-thumbnail img-4-3" alt="Miniatura Safa">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="gallery-item" data-image="./assets/images/techtalks/th.jpg" data-caption="Introducción a Podman (Deloitte - Zaragoza)">
+                        <div class="img-container">
+                            <img src="./assets/images/techtalks/th.jpg" class="img-thumbnail img-4-3" alt="Miniatura TH">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="gallery-item" data-image="./assets/images/techtalks/taller-docker.jpg" data-caption="Master Class de Docker y  Docker Compose (Deloitte - España)">
+                        <div class="img-container">
+                            <img src="./assets/images/techtalks/taller-docker.jpg" class="img-thumbnail img-4-3" alt="Miniatura Taller Docker">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="#" class="gallery-item" data-image="./assets/images/techtalks/us.jpg" data-caption="Podman y DevContainer (Universidad de Sevilla)">
+                        <div class="img-container">
+                            <img src="./assets/images/techtalks/us.jpg" class="img-thumbnail img-4-3" alt="Miniatura US">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal imágenes -->
+    <div id="galleryModal" class="modal fade" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid">
+                    <div id="modalCaption" class="mt-2 text-center"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="prevBtn"><i class="bi bi-arrow-left"></i></button>
+                    <button type="button" class="btn btn-primary" id="nextBtn"><i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
