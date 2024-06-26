@@ -131,3 +131,15 @@ hr {
     margin: 0 auto;
     display: block;
 }
+
+.badges  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 450px;
+    margin: auto;
+}
+
+.badge {
+    max-width: 150px;
+}
