@@ -11,17 +11,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="./assets/styles/styles.css" rel="stylesheet">
-    <script src="./assets/js/load.js"></script>
 </head>
 
 <body class="mb-5">
     <div class="header row">
-        <div class="photo col-lg-3 p-5">
+        <div class="col-12 text-end pt-3 pe-5 link">
+            <a href="./es.html" class="language-link"><i class="bi bi-globe"></i> Español</a>
+        </div>
+        <div class="photo col-lg-3 px-5 pb-5">
             <img src="./assets/images/me.jpeg" />
         </div>
         <div class="main-title text-center col-lg-6 ps-3 pe-3">
             <div class="name">Adrián Cantón Fernández</div>
-            <div class="job">Computer Engineer</div>
+            <div class="job">Software Engineer</div>
         </div>
         <div class="links col-lg-3 pt-5 pb-5">
             <div>
@@ -76,9 +78,11 @@
                 <div class="section-item"><span class="item-date">2020: </span> Node from 0 to Expert (Udemy) <i
                         class="fas fa-book"></i></div>
                 <div class="section-item"><span class="item-date">2020: </span> Docker from Beginner to Expert (Udemy)
-                    <i class="fas fa-book"></i></div>
+                    <i class="fas fa-book"></i>
+                </div>
                 <div class="section-item"><span class="item-date">2021: </span> Professional Scrum Developer (Scrum.org)
-                    <i class="fas fa-certificate"></i></div>
+                    <i class="fas fa-certificate"></i>
+                </div>
                 <div class="section-item"><span class="item-date">2021-2024: </span> AWS Solution Architect Associate
                     (AWS) <i class="fas fa-certificate"></i></div>
                 <div class="section-item"><span class="item-date">2022 - 2025: </span> Certified Kubernetes Application
@@ -139,6 +143,13 @@
                     in multiple diverse projects, gaining expertise in cloud technologies, and expanding my skills in
                     software architecture design. My role has involved leading teams in both agile and traditional
                     project management settings, ensuring successful delivery of solutions that meet client needs.</div>
+                <div class="section-item fw-bold mt-5 mb-3">Superprof</div>
+                <div class="section-subitem ms-3"><span class="item-date">2022 - Present: </span> Independent Private
+                    Tutor</div>
+                <div class="section-description text-justify mt-3">Since 2022, I have been offering private programming
+                    lessons on the online platform Superprof, specializing in Java, JavaScript, Spring Boot, and
+                    Angular. This experience has enhanced my communication skills and taught me to be more assertive in
+                    effectively conveying complex technical knowledge.</div>
             </div>
         </div>
 
@@ -263,20 +274,36 @@
         <div id="galleryModal" class="modal fade" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <img id="modalImage" src="" class="">
-                        <div id="modalCaption" class="mt-2 text-center"></div>
+                    <div class="modal-header">
+                        <div id="modalCaption" class="mt-2 d-flex justify-content-end"></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="prevBtn"><i
-                                class="bi bi-arrow-left"></i></button>
-                        <button type="button" class="btn btn-primary" id="nextBtn"><i
-                                class="bi bi-arrow-right"></i></button>
+                    <div class="modal-body">
+                        <div class="col">
+                            <button type="button" class="modal-btn" id="prevBtn"><i
+                                    class="bi bi-chevron-left"></i></button>
+                        </div>
+                        <div>
+                            <img id="modalImage" src="" class="">
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <button type="button" class="modal-btn" id="nextBtn"><i
+                                    class="bi bi-chevron-right"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
