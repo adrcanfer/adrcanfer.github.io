@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carfy — Aparca Gratis & Mapa Colaborativo de Parkings</title>
+    <meta name="description" content="Carfy es la app colaborativa para encontrar aparcamiento gratis y low-cost en cualquier ciudad. Explora el mapa interactivo con código de colores, reporta sitios y gana Karma.">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/apps/carfy.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Modern Styles -->
+    <link rel="stylesheet" href="../assets/styles/modern.css">
+
+    <style>
+        .text-gradient-carfy {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-carfy {
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(16, 185, 129, 0.12) 70%, transparent 100%);
+            filter: blur(120px);
+        }
+
+        .phone-frame {
+            border: 8px solid #1f2937;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(14, 165, 233, 0.2);
+            overflow: hidden;
+            background: #0f172a;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Ambient Glowing Backdrops -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] glow-carfy pointer-events-none"></div>
+    <div class="fixed top-1/2 right-10 w-[550px] h-[550px] glow-primary pointer-events-none"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="./landing.html" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl shadow-lg shadow-sky-500/20 overflow-hidden group-hover:scale-105 transition-transform flex-shrink-0">
+                        <img src="../assets/images/apps/carfy.png" alt="Carfy Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white group-hover:text-sky-300 transition-colors">Carfy</span>
+                        <span class="block text-[11px] font-medium text-sky-400">Aparca Gratis • Comunidad</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-7">
+                <a href="#codigo-colores" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Código de Colores</a>
+                <a href="#caracteristicas" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Funcionalidades</a>
+                <a href="#capturas" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">La App</a>
+                <a href="#descargar" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Descargar</a>
+                <a href="./privacy-policy.html" class="text-sm font-semibold text-gray-400 hover:text-sky-300 transition-colors">Privacidad</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="../index.html" class="hidden sm:inline-flex items-center px-3.5 py-2 text-xs font-semibold rounded-xl text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                    <i class="bi bi-house me-1.5"></i> Portfolio
+                </a>
+                <a href="#descargar" class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold rounded-xl text-white bg-gradient-to-r from-sky-600 via-sky-500 to-emerald-500 hover:from-sky-500 hover:to-emerald-400 shadow-lg shadow-sky-600/30 transition-all hover:scale-[1.02]">
+                    <i class="bi bi-cloud-arrow-down-fill me-1.5"></i> Descargar App
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-400 hover:text-white focus:outline-none p-2" aria-label="Abrir menú">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-3 pb-6 space-y-3 bg-[#0f172a]/95 border-b border-gray-800">
+            <a href="#codigo-colores" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Código de Colores</a>
+            <a href="#caracteristicas" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Funcionalidades</a>
+            <a href="#capturas" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Capturas</a>
+            <a href="#descargar" class="block py-2 text-sm font-semibold text-sky-400 hover:text-sky-300">Descargar App</a>
+            <a href="./privacy-policy.html" class="block py-2 text-xs text-gray-400 hover:text-gray-200">Política de Privacidad</a>
+            <a href="../index.html" class="block py-2 text-xs text-gray-400 hover:text-gray-200">← Volver al Portfolio</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- HERO SECTION -->
+        <section class="pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                    <!-- Left: Hero Text & CTAs -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-semibold text-sky-300">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span>Red Colaborativa de Conductores • iOS & Android</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+                            ¿Cansado de buscar aparcamiento? <br>
+                            <span class="text-gradient-carfy">Aparca gratis con Carfy.</span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            La aplicación colaborativa diseñada por y para conductores que quieren dejar de perder tiempo y dinero en parkings caros. Explora un mapa inteligente, descubre explanadas gratuitas y parkings low-cost contrastados en tiempo real.
+                        </p>
+
+                        <!-- Color Badges Quick Overview -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-xs font-bold text-emerald-300">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Verde: 100% Gratis
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-xs font-bold text-amber-300">
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Amarillo: Low-Cost
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/15 border border-purple-500/30 text-xs font-bold text-purple-300">
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> Morado: No Confirmado
+                            </span>
+                        </div>
+
+                        <!-- Store Download Buttons -->
+                        <div class="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://apps.apple.com/ec/app/carfy-aparca-gratis/id6762514729" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-white text-gray-900 hover:bg-gray-100 font-bold text-sm shadow-xl shadow-white/10 transition-all hover:scale-[1.02] gap-3">
+                                <i class="fa-brands fa-apple text-2xl"></i>
+                                <div class="text-left leading-tight">
+                                    <span class="block text-[10px] font-medium text-gray-600 uppercase">Descargar en</span>
+                                    <span class="text-sm font-extrabold">App Store</span>
+                                </div>
+                            </a>
+
+                            <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.carfy" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 shadow-xl transition-all hover:scale-[1.02] gap-3">
+                                <i class="fa-brands fa-google-play text-2xl text-emerald-400"></i>
+                                <div class="text-left leading-tight">
+                                    <span class="block text-[10px] font-medium text-gray-400 uppercase">Disponible en</span>
+                                    <span class="text-sm font-extrabold">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="pt-2 flex items-center justify-center lg:justify-start space-x-6 text-xs text-gray-400">
+                            <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> 100% Gratuita</span>
+                            <span class="flex items-center gap-1.5"><i class="bi bi-people-fill text-sky-400"></i> Red Colaborativa</span>
+                            <span class="flex items-center gap-1.5"><i class="bi bi-geo-alt-fill text-purple-400"></i> Precisión Mapbox</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Mockup Showcase -->
+                    <div class="lg:col-span-5 flex justify-center relative">
+                        <div class="relative max-w-[280px] sm:max-w-[320px]">
+                            <div class="absolute -inset-2 bg-gradient-to-tr from-sky-500 to-emerald-400 rounded-[3rem] blur-xl opacity-40 animate-pulse"></div>
+
+                            <div class="relative phone-frame">
+                                <img src="../assets/images/apps/carfy/screen_1.png" alt="Mapa Carfy con parkings gratuitos" class="w-full h-auto block">
+                            </div>
+
+                            <!-- Floating badge 1 -->
+                            <div class="absolute -top-4 -left-6 glass-card p-3 rounded-2xl border border-emerald-500/40 shadow-xl flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-square-parking text-lg"></i>
+                                </div>
+                                <div class="text-left text-xs">
+                                    <span class="font-bold text-white block">Parking Gratis</span>
+                                    <span class="text-emerald-400 font-semibold">Confirmado hoy</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating badge 2 -->
+                            <div class="absolute -bottom-4 -right-6 glass-card p-3 rounded-2xl border border-sky-500/40 shadow-xl flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-trophy text-sm"></i>
+                                </div>
+                                <div class="text-left text-xs">
+                                    <span class="font-bold text-white block">Ninja del Asfalto</span>
+                                    <span class="text-sky-300 font-semibold">+50 Puntos Karma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CÓDIGO DE COLORES INTELIGENTE -->
+        <section id="codigo-colores" class="py-20 border-t border-gray-800 bg-[#090d16]/70 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Mapas Claros y Efectivos</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Código de Colores Inteligente
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base">
+                        De un solo vistazo a la pantalla sabrás qué tipo de parking tienes cerca, sus tarifas y el grado de fiabilidad verificado por otros usuarios.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Verde: Gratis -->
+                    <div class="glass-card p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all space-y-4 relative overflow-hidden group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block">
+                            100% Gratis
+                        </span>
+                        <h3 class="text-xl font-bold text-white">Aparcamiento Sin Coste</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Explanadas públicas, calles residenciales sin zona azul/verde y estacionamientos completamente gratuitos. Ahorra cientos de euros en tus visitas a la ciudad.
+                        </p>
+                    </div>
+
+                    <!-- Amarillo: Low-Cost -->
+                    <div class="glass-card p-8 rounded-3xl border border-amber-500/30 hover:border-amber-400 transition-all space-y-4 relative overflow-hidden group">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/30 inline-block">
+                            Parking Low-Cost
+                        </span>
+                        <h3 class="text-xl font-bold text-white">Tarifas Especiales</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Parkings vigilados o cubiertos con tarifas asequibles, abonos reducidos o promociones especiales para estancias prolongadas o viajes.
+                        </p>
+                    </div>
+
+                    <!-- Morado: No Confirmado -->
+                    <div class="glass-card p-8 rounded-3xl border border-purple-500/30 hover:border-purple-400 transition-all space-y-4 relative overflow-hidden group">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-question-circle"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500/20 text-purple-300 border border-purple-500/30 inline-block">
+                            Por Confirmar
+                        </span>
+                        <h3 class="text-xl font-bold text-white">Zonas Pendientes</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Sitios avistados que aún no cuentan con confirmaciones recientes de otros conductores. ¡Sé el primero en validar el estado y gana puntos extra de Karma!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CARACTERÍSTICAS -->
+        <section id="caracteristicas" class="py-20 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Por y Para Conductores</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        ¿Por qué elegir Carfy?
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base">
+                        No somos una empresa de parkings: somos una red de conductores ayudando a otros conductores a moverse con libertad.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Feature 1 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-sky-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Tecnología Mapbox</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            Mapas vectoriales de alta precisión, rápidos y fluidos en cualquier rincón del mundo, sin consumo excesivo de batería ni datos.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Comunidad 100% Activa</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            ¿Has descubierto un hueco en tu barrio? ¡Añádelo! ¿Un parking ya no es gratuito? ¡Repórtalo! La unión hace la fuerza y mantiene el mapa al día.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-amber-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Sistema de Karma</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            ¡Conviértete en un "Ninja del Asfalto"! Gana puntos por cada colaboración, sube de rango y lidera el crecimiento de la red.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Información Contrastada</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            Consulta las confirmaciones en tiempo real de otros usuarios antes de llegar. No te lleves sorpresas con plazas ocupadas o de pago.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-rose-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Tus Favoritos a Mano</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            Guarda esos sitios estratégicos donde siempre sueles encontrar hueco y accede a ellos en un solo clic, estés donde estés.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Navegación Directa</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                            Elige tu parking y abre la ruta directamente en <strong>Google Maps</strong>, <strong>Waze</strong> o <strong>Apple Maps</strong> con un solo toque.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CAPTURAS DE LA APP -->
+        <section id="capturas" class="py-20 border-t border-gray-800 bg-[#090d16]/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Interfaz Intuitiva</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Explora la Experiencia Carfy
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base">
+                        Capturas reales de la aplicación en funcionamiento: mapa interactivo, vista de detalles, favoritos y reportes comunitarios.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <div class="space-y-3">
+                        <div class="phone-frame hover:scale-[1.02] transition-transform">
+                            <img src="../assets/images/apps/carfy/screen_1.png" alt="Mapa principal Carfy con parkings gratis" class="w-full h-auto block">
+                        </div>
+                        <p class="text-center text-xs font-bold text-gray-300">Mapa con Código de Colores</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="phone-frame hover:scale-[1.02] transition-transform">
+                            <img src="../assets/images/apps/carfy/screen_2.png" alt="Detalle de parking e indicaciones de navegación" class="w-full h-auto block">
+                        </div>
+                        <p class="text-center text-xs font-bold text-gray-300">Ficha de Parking & Ruta</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="phone-frame hover:scale-[1.02] transition-transform">
+                            <img src="../assets/images/apps/carfy/screen_3.png" alt="Comunidad, confirmaciones y reportes" class="w-full h-auto block">
+                        </div>
+                        <p class="text-center text-xs font-bold text-gray-300">Reportes Comunitarios</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="phone-frame hover:scale-[1.02] transition-transform">
+                            <img src="../assets/images/apps/carfy/screen_4.png" alt="Sistema de Karma y perfil de conductor" class="w-full h-auto block">
+                        </div>
+                        <p class="text-center text-xs font-bold text-gray-300">Karma & Gamificación</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FINAL CTA -->
+        <section id="descargar" class="py-20 lg:py-28 relative overflow-hidden border-t border-gray-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+
+                <div class="w-20 h-20 rounded-3xl mx-auto shadow-2xl shadow-sky-500/30 overflow-hidden">
+                    <img src="../assets/images/apps/carfy.png" alt="Carfy Logo" class="w-full h-full object-cover">
+                </div>
+
+                <div class="space-y-4 max-w-2xl mx-auto">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        Di adiós al estrés de aparcar y a las tarifas abusivas
+                    </h2>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        Descarga Carfy hoy mismo y únete a la red más inteligente de conductores. ¡Aparcar gratis es posible si lo hacemos juntos!
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="https://apps.apple.com/ec/app/carfy-aparca-gratis/id6762514729" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-gray-900 hover:bg-gray-100 font-bold text-base shadow-2xl transition-all hover:scale-105 gap-3">
+                        <i class="fa-brands fa-apple text-3xl"></i>
+                        <div class="text-left leading-tight">
+                            <span class="block text-[11px] font-medium text-gray-600 uppercase">Descargar para iOS</span>
+                            <span class="text-base font-extrabold">App Store</span>
+                        </div>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.carfy" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white font-bold text-base shadow-2xl shadow-sky-600/30 transition-all hover:scale-105 gap-3">
+                        <i class="fa-brands fa-google-play text-3xl text-white"></i>
+                        <div class="text-left leading-tight">
+                            <span class="block text-[11px] font-medium text-sky-200 uppercase">Descargar para Android</span>
+                            <span class="text-base font-extrabold">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pt-6">
+                    <a href="./privacy-policy.html" class="text-xs text-gray-400 hover:text-sky-300 transition-colors inline-flex items-center gap-1.5">
+                        <i class="bi bi-shield-check"></i> Consulta nuestra Política de Privacidad
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-[#090d16] py-12 relative z-10 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <img src="../assets/images/apps/carfy.png" alt="Carfy Logo" class="w-8 h-8 rounded-lg object-cover">
+                        <span class="text-lg font-bold text-white">Carfy</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-md leading-relaxed">
+                        La plataforma colaborativa para encontrar aparcamiento gratis y low-cost en cualquier ciudad del mundo. Desarrollada por Adrián Cantón.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Otras Apps</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="https://www.barbook.es/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">BarBook — Web & Apps</a></li>
+                        <li><a href="https://www.comunikame.es" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">ComuniKame — Avisos & Canales</a></li>
+                        <li><a href="../eacert/landing.html" class="hover:text-indigo-400 transition-colors">EACert — Prep TOGAF®</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Enlaces</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="./privacy-policy.html" class="hover:text-sky-400 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="mailto:adriancanton@gmail.com" class="hover:text-gray-300">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>
+                    © 2026 Carfy App. Todos los derechos reservados.
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://apps.apple.com/ec/app/carfy-aparca-gratis/id6762514729" target="_blank" rel="noopener noreferrer" class="hover:text-white">App Store</a>
+                    <span>•</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.carfy" target="_blank" rel="noopener noreferrer" class="hover:text-white">Google Play</a>
+                    <span>•</span>
+                    <a href="./privacy-policy.html" class="hover:text-sky-400">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>

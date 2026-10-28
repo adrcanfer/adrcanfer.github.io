@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EACert — Política de Privacidad y Términos Legales</title>
+    <meta name="description" content="Política de privacidad, exención de responsabilidad y aviso legal de marcas para la aplicación independiente EACert (preparación TOGAF® Foundation y Practitioner).">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/apps/eacert.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Modern Styles -->
+    <link rel="stylesheet" href="../assets/styles/modern.css">
+
+    <style>
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .legal-card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .legal-card:hover {
+            border-color: rgba(99, 102, 241, 0.25);
+        }
+
+        .lang-pill {
+            cursor: pointer;
+            padding: 0.4rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .lang-pill.active {
+            background: #4f46e5;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+        }
+
+        .lang-pill:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-pill:not(.active):hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Ambient Glowing Backgrounds -->
+    <div class="fixed top-0 left-1/4 w-[450px] h-[450px] glow-primary"></div>
+    <div class="fixed top-1/2 right-10 w-[500px] h-[500px] glow-purple"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="./landing.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl shadow-lg shadow-cyan-500/20 overflow-hidden group-hover:scale-105 transition-transform flex-shrink-0">
+                        <img src="../assets/images/apps/eacert.png" alt="EACert Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-white group-hover:text-cyan-300 transition-colors">EACert</span>
+                        <span class="block text-[10px] font-medium text-gray-400">Legal & Privacy</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Language Switcher & Back links -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center bg-gray-900/80 p-1 rounded-full border border-gray-800">
+                    <button id="btn-toggle-es" class="lang-pill active" onclick="setLanguage('es')">
+                        <i class="bi bi-globe me-1"></i> Español
+                    </button>
+                    <button id="btn-toggle-en" class="lang-pill" onclick="setLanguage('en')">
+                        <i class="bi bi-globe me-1"></i> English
+                    </button>
+                </div>
+
+                <a href="./landing.html" class="hidden sm:inline-flex items-center text-xs font-semibold px-3 py-2 rounded-xl text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+                    <i class="bi bi-arrow-left me-1.5"></i> Volver a EACert
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- Top Breadcrumbs / Return Links -->
+        <div class="flex flex-wrap items-center gap-3 text-xs text-gray-400 mb-8">
+            <a href="../index.html" class="hover:text-white transition-colors flex items-center gap-1">
+                <i class="bi bi-house"></i> Inicio Portfolio
+            </a>
+            <span>/</span>
+            <a href="./landing.html" class="hover:text-indigo-400 transition-colors flex items-center gap-1">
+                <i class="fa-solid fa-graduation-cap text-[10px]"></i> Landing EACert
+            </a>
+            <span>/</span>
+            <span class="text-indigo-300 font-semibold" id="breadcrumb-current">Política de Privacidad</span>
+        </div>
+
+        <!-- Document Hero Header -->
+        <div class="text-center sm:text-left mb-10 pb-8 border-b border-gray-800">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full app-badge-eacert text-xs font-semibold tracking-wide mb-4">
+                <i class="bi bi-shield-check text-indigo-400"></i>
+                <span id="header-badge">EACert — App de Preparación TOGAF® Foundation & Practitioner</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-3" id="header-title">
+                Política de Privacidad y Términos Legales
+            </h1>
+
+            <p class="text-sm text-gray-400 flex flex-wrap items-center gap-3 justify-center sm:justify-start">
+                <span><i class="bi bi-calendar-check text-indigo-400 me-1"></i> <strong id="date-label">Última actualización:</strong> 27 de octubre de 2026</span>
+                <span>•</span>
+                <span><i class="bi bi-person text-indigo-400 me-1"></i> Desarrollador: Adrián Cantón Fernández</span>
+            </p>
+        </div>
+
+        <!-- 4 Quick-Insight Transparency Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            
+            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3">
+                    <i class="bi bi-person-slash text-lg"></i>
+                </div>
+                <h4 class="text-xs font-bold text-white mb-1" id="stat-title-1">Sin Registro</h4>
+                <p class="text-[11px] text-gray-400 leading-tight" id="stat-desc-1">No solicitamos nombre, correo ni contraseñas. Acceso inmediato.</p>
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-3">
+                    <i class="bi bi-hdd-network text-lg"></i>
+                </div>
+                <h4 class="text-xs font-bold text-white mb-1" id="stat-title-2">Almacenamiento Local</h4>
+                <p class="text-[11px] text-gray-400 leading-tight" id="stat-desc-2">Tus puntuaciones y tests se guardan únicamente en tu teléfono.</p>
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3">
+                    <i class="bi bi-badge-ad text-lg"></i>
+                </div>
+                <h4 class="text-xs font-bold text-white mb-1" id="stat-title-3">Google AdMob</h4>
+                <p class="text-[11px] text-gray-400 leading-tight" id="stat-desc-3">Anuncios de terceros para cubrir costes de infraestructura y tiendas.</p>
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border border-white/5">
+                <div class="w-9 h-9 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-3">
+                    <i class="bi bi-shield-exclamation text-lg"></i>
+                </div>
+                <h4 class="text-xs font-bold text-white mb-1" id="stat-title-4">Independiente</h4>
+                <p class="text-[11px] text-gray-400 leading-tight" id="stat-desc-4">TOGAF® es marca de The Open Group. Sin afiliación oficial.</p>
+            </div>
+
+        </div>
+
+        <!-- CONTENIDO EN ESPAÑOL -->
+        <div id="content-es" class="space-y-6">
+
+            <!-- AVISO LEGAL Y MARCAS -->
+            <div class="p-6 sm:p-7 rounded-2xl bg-amber-950/20 border border-amber-500/30 backdrop-blur-md">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                        <i class="bi bi-shield-exclamation"></i>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <h3 class="text-lg font-bold text-white">Aviso Legal Importante sobre Marcas, No Afiliación y Fuentes</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>TOGAF®</strong> es una marca comercial registrada de <strong>The Open Group</strong> en los Estados Unidos y en otros países.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>EACert</strong> es una aplicación formativa y didáctica desarrollada de manera <strong>completamente independiente</strong> por Adrián Cantón Fernández para facilitar la preparación y autoevaluación de las certificaciones <strong>TOGAF® Foundation</strong> y <strong>TOGAF® Practitioner</strong>. Esta aplicación <strong>NO es una herramienta oficial ni está afiliada, patrocinada, avalada, certificada ni asociada de ninguna manera con The Open Group</strong>.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>Origen del Contenido e Inteligencia Artificial:</strong> Las preguntas de estudio, simulacros tipo test, supuestos prácticos y explicaciones razonadas han sido <strong>generados con la asistencia de tecnologías de Inteligencia Artificial (IA)</strong> y/o recopilados y adaptados a partir de <strong>fuentes públicas abiertas de la comunidad de estudio (incluyendo repositorios de preparación como FreeCram entre otros recursos abiertos)</strong>, con fines estrictamente didácticos y de apoyo al autoaprendizaje personal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 1: CARÁCTER INDEPENDIENTE Y MONETIZACIÓN -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">01</span>
+                    <h3 class="text-lg font-bold text-white">Carácter Independiente y Exención de Responsabilidad por Monetización</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    La aplicación <strong>EACert</strong> es una herramienta complementaria de apoyo al estudio, creada con fines exclusivamente pedagógicos y de autoevaluación personal.
+                </p>
+                <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 text-xs text-gray-300 space-y-2">
+                    <p>
+                        <strong>Monetización y Anuncios:</strong> EACert es una aplicación gratuita que se financia mediante la visualización de publicidad gestionada a través de plataformas publicitarias de terceros (como <strong>Google AdMob</strong>). Los ingresos derivados de los anuncios publicitarios se destinan única y exclusivamente a cubrir los gastos técnicos de mantenimiento, actualización, cuentas de desarrollador e infraestructura de la herramienta.
+                    </p>
+                    <p>
+                        La monetización mediante anuncios <strong>no implica en ningún caso una relación comercial, licencia oficial, comisión o acuerdo de patrocinio con The Open Group</strong> ni con los propietarios de la marca TOGAF®. El desarrollador rechaza y queda exento de cualquier reclamo derivado de la existencia de publicidad en una aplicación de apoyo al estudio orientada al marco TOGAF®.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: EXCLUSIÓN DE GARANTÍAS -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">02</span>
+                    <h3 class="text-lg font-bold text-white">Exclusión de Garantías sobre Resultados en Exámenes Oficiales</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Todo el contenido didáctico, preguntas de práctica, respuestas y explicaciones se proporcionan <strong>"TAL CUAL" ("AS IS")</strong> y según disponibilidad, sin garantías de ningún tipo, expresas o implícitas.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Las preguntas didácticas, explicaciones razonadas y respuestas para TOGAF® Foundation y TOGAF® Practitioner han sido generadas con la asistencia de herramientas de Inteligencia Artificial (IA) y recopiladas a partir de recursos formativos públicos y bancos de estudio abiertos de la comunidad (como FreeCram entre otros), con fines exclusivamente didácticos y de autoaprendizaje personal. El usuario reconoce que este material es meramente orientativo y complementario.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Aunque el desarrollador dedica el máximo esfuerzo para mantener el material actualizado y acorde con la documentación pública del marco TOGAF®, <strong>no se garantiza ni promete que el uso de esta aplicación asegure la aprobación de los exámenes oficiales de certificación de The Open Group ni la consecución de una puntuación determinada</strong>. Las preguntas oficiales son de exclusiva competencia y autoría de The Open Group, organismo que no evalúa ni aprueba el material de esta app.
+                </p>
+                <div class="p-3.5 rounded-xl bg-rose-950/20 border border-rose-500/20 text-xs text-rose-300">
+                    <i class="bi bi-info-circle me-1.5"></i> En ningún caso el desarrollador será legal o económicamente responsable por suspensos en convocatorias oficiales, tasas de examen satisfechas, pérdida de beneficios o cualesquiera daños directos, indirectos, consecuenciales o incidentales relacionados con el uso o la imposibilidad de uso de la aplicación.
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: DATOS PERSONALES Y ALMACENAMIENTO LOCAL -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">03</span>
+                    <h3 class="text-lg font-bold text-white">Datos Personales y Almacenamiento Local</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    <strong>EACert no solicita, ni recopila, ni almacena datos de carácter personal</strong> como nombre, apellidos, dirección postal, correo electrónico o contraseñas. La aplicación no exige la creación de cuentas de usuario ni registro previo para acceder a los exámenes y funcionalidades.
+                </p>
+                <div class="p-4 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-xs text-indigo-200">
+                    <strong>Almacenamiento Local en el Dispositivo:</strong> Los progresos en los tests, puntuaciones y configuraciones de la aplicación se guardan localmente en la memoria del dispositivo del usuario (mediante almacenamiento local / <em>SharedPreferences</em>). Estos datos nunca son transmitidos ni almacenados en servidores externos controlados por el desarrollador.
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: SERVICIOS DE PUBLICIDAD DE TERCEROS -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">04</span>
+                    <h3 class="text-lg font-bold text-white">Servicios de Publicidad de Terceros (Google AdMob)</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Para mostrar anuncios, la aplicación integra el kit de desarrollo (SDK) de <strong>Google Mobile Ads (Google AdMob)</strong>.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Google AdMob puede recopilar y procesar de manera automatizada ciertos datos técnicos con el propósito de servir anuncios, evitar el fraude y analizar el rendimiento publicitario. Dichos datos pueden incluir:
+                </p>
+                <ul class="grid sm:grid-cols-2 gap-2 text-xs text-gray-300 pt-1">
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-phone text-indigo-400"></i> Identificadores de publicidad (Google Ad ID / IDFA).
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-geo-alt text-indigo-400"></i> Dirección IP (para diagnóstico y geolocalización aproximada).
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-graph-up text-indigo-400"></i> Métricas de rendimiento, clicks e impresiones.
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-cpu text-indigo-400"></i> Información técnica básica del hardware y versión de SO.
+                    </li>
+                </ul>
+                <div class="pt-2 text-xs text-gray-400 flex flex-wrap gap-4">
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline flex items-center gap-1">
+                        <i class="bi bi-box-arrow-up-right"></i> Política de Privacidad de Google
+                    </a>
+                    <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline flex items-center gap-1">
+                        <i class="bi bi-box-arrow-up-right"></i> Cómo gestiona Google los datos en anuncios
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: CONTROL DE PUBLICIDAD -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">05</span>
+                    <h3 class="text-lg font-bold text-white">Control de Publicidad y Opciones del Usuario</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Los usuarios tienen la potestad de restablecer o eliminar su identificador de publicidad y configurar la preferencia de recibir anuncios personalizados en cualquier momento a través de los ajustes de su sistema operativo:
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-gray-300">
+                    <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+                        <strong class="text-white block mb-1 flex items-center gap-1"><i class="fa-brands fa-android text-emerald-400"></i> En Android:</strong>
+                        <span>Ajustes &gt; Google &gt; Anuncios &gt; "Restablecer identificador publicitario" o "Eliminar el identificador publicitario".</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+                        <strong class="text-white block mb-1 flex items-center gap-1"><i class="fa-brands fa-apple text-gray-300"></i> En iOS:</strong>
+                        <span>Ajustes &gt; Privacidad y seguridad &gt; Rastreo / Publicidad de Apple.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 6: MENORES -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">06</span>
+                    <h3 class="text-lg font-bold text-white">Privacidad de Menores</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    La aplicación está orientada a profesionales, estudiantes universitarios y adultos que preparan certificaciones profesionales en arquitectura de software y empresarial. No recopila intencionadamente información ni está dirigida a menores de 13 años (o 16 años según la legislación aplicable en la Unión Europea).
+                </p>
+            </div>
+
+            <!-- SECCIÓN 7: MODIFICACIONES -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">07</span>
+                    <h3 class="text-lg font-bold text-white">Modificaciones de esta Política</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Esta política de privacidad y aviso legal puede actualizarse periódicamente para reflejar cambios en la funcionalidad de la app, normativas legales aplicables o requerimientos de las tiendas de aplicaciones. Cualquier cambio será publicado directamente en este documento con su respectiva fecha de actualización.
+                </p>
+            </div>
+
+            <!-- SECCIÓN 8: CONTACTO -->
+            <div class="legal-card space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">08</span>
+                    <h3 class="text-lg font-bold text-white">Información de Contacto y Soporte</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Si tiene cualquier duda, consulta o sugerencia en relación con esta política de privacidad o con la aplicación EACert, puede contactar directamente al desarrollador:
+                </p>
+                <div class="grid sm:grid-cols-3 gap-3 pt-2">
+                    <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-xs">
+                        <span class="text-gray-400 block mb-1">Desarrollador</span>
+                        <strong class="text-white">Adrián Cantón Fernández</strong>
+                    </div>
+                    <a href="mailto:adriancanton@gmail.com" class="p-3.5 rounded-xl bg-gray-900 hover:bg-gray-800/80 border border-gray-800 text-xs transition-colors">
+                        <span class="text-gray-400 block mb-1">Correo Electrónico</span>
+                        <strong class="text-indigo-400 break-all">adriancanton@gmail.com</strong>
+                    </a>
+                    <a href="https://adrcanfer.github.io" class="p-3.5 rounded-xl bg-gray-900 hover:bg-gray-800/80 border border-gray-800 text-xs transition-colors">
+                        <span class="text-gray-400 block mb-1">Sitio Web Portfolio</span>
+                        <strong class="text-white">adrcanfer.github.io</strong>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTENIDO EN INGLÉS -->
+        <div id="content-en" class="space-y-6" style="display: none;">
+
+            <!-- TRADEMARK & LEGAL DISCLAIMER -->
+            <div class="p-6 sm:p-7 rounded-2xl bg-amber-950/20 border border-amber-500/30 backdrop-blur-md">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                        <i class="bi bi-shield-exclamation"></i>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <h3 class="text-lg font-bold text-white">Important Trademark, Non-Affiliation & Sources Notice</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>TOGAF®</strong> is a registered trademark of <strong>The Open Group</strong> in the United States and other countries.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>EACert</strong> is an educational exam preparation tool developed completely <strong>independently</strong> by Adrián Cantón Fernández to assist with studying for <strong>TOGAF® Foundation</strong> and <strong>TOGAF® Practitioner</strong> certifications. This application is <strong>NOT an official tool, nor is it affiliated with, sponsored by, endorsed by, certified by, or associated in any way with The Open Group</strong>.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            <strong>Content Origin & AI Assistance:</strong> Practice questions, exam simulations, scenario exercises, and detailed rationalized explanations have been <strong>generated with the assistance of Artificial Intelligence (AI) technologies</strong> and/or compiled and adapted from <strong>publicly accessible community study repositories (such as FreeCram and other open online resources)</strong> strictly for personal educational and self-study purposes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 1: INDEPENDENT STATUS & MONETIZATION -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">01</span>
+                    <h3 class="text-lg font-bold text-white">Independent Educational Purpose & Advertising Monetization Disclaimer</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    The <strong>EACert</strong> mobile application is intended solely as an auxiliary study, training, and self-assessment resource for personal educational use.
+                </p>
+                <div class="p-4 rounded-xl bg-gray-900/70 border border-gray-800 text-xs text-gray-300 space-y-2">
+                    <p>
+                        <strong>Advertising & Monetization:</strong> EACert is offered as a free application supported by advertisements delivered via third-party advertising networks (specifically <strong>Google AdMob</strong>). Any ad revenue generated is used strictly to support development time, application store fees, technical updates, and infrastructure costs.
+                    </p>
+                    <p>
+                        The presence of third-party advertisements and the monetization of the application <strong>do NOT constitute, imply, or suggest any commercial partnership, licensing agreement, endorsement, or sponsorship by The Open Group</strong> or the trademark owners of TOGAF®. The developer expressly disclaims any liability or claims related to the independent monetization of this study aid.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: EXAM OUTCOME DISCLAIMER -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">02</span>
+                    <h3 class="text-lg font-bold text-white">No Guarantee of Official Certification Exam Results</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    All practice questions, quizzes, answers, and explanations within EACert are provided on an <strong>"AS IS" and "AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Study questions, sample cases, and explanations for TOGAF® Foundation and TOGAF® Practitioner have been generated with the assistance of Artificial Intelligence (AI) and curated from public community study repositories (including FreeCram among others), intended exclusively as an illustrative self-study aid.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    While the developer takes great care to keep question sets accurate and aligned with public documentation of the TOGAF® standard, <strong>no guarantee, warranty, or representation is made that using this application will ensure passing the official TOGAF® exam or achieving any particular passing score</strong>. Official examination questions are written, maintained, and administered exclusively by The Open Group, which has not evaluated, reviewed, or endorsed the contents of this app.
+                </p>
+                <div class="p-3.5 rounded-xl bg-rose-950/20 border border-rose-500/20 text-xs text-rose-300">
+                    <i class="bi bi-info-circle me-1.5"></i> Under no circumstances shall the developer be liable for any failed exam attempts, exam registration fees, loss of opportunity, or any direct, indirect, incidental, or consequential damages resulting from the use of, or inability to use, this application.
+                </div>
+            </div>
+
+            <!-- SECTION 3: PERSONAL DATA & LOCAL STORAGE -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">03</span>
+                    <h3 class="text-lg font-bold text-white">Data Collection and Local Storage</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    <strong>EACert does NOT collect, transmit, or store any Personally Identifiable Information (PII)</strong>, such as names, email addresses, phone numbers, or passwords. No account creation or registration is required to use the app.
+                </p>
+                <div class="p-4 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-xs text-indigo-200">
+                    <strong>Local Device Storage:</strong> Your test history, progress, and preferences are stored exclusively on your device's internal storage (via <em>SharedPreferences</em>). This data is never sent to or stored on external servers operated by the developer.
+                </div>
+            </div>
+
+            <!-- SECTION 4: THIRD-PARTY ADVERTISING (GOOGLE ADMOB) -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">04</span>
+                    <h3 class="text-lg font-bold text-white">Third-Party Advertising Services (Google AdMob)</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    EACert integrates the <strong>Google Mobile Ads SDK (Google AdMob)</strong> to display banner, interstitial, or rewarded advertisements.
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Google AdMob may collect and process certain non-personally identifiable technical information to serve ads, prevent fraud, and report ad performance in compliance with its privacy standards:
+                </p>
+                <ul class="grid sm:grid-cols-2 gap-2 text-xs text-gray-300 pt-1">
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-phone text-indigo-400"></i> Device advertising identifiers (Google Ad ID / IDFA).
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-geo-alt text-indigo-400"></i> IP address (approximate location & diagnostics).
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-graph-up text-indigo-400"></i> Performance metrics, ad views and interaction logs.
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-gray-900 border border-gray-800 flex items-center gap-2">
+                        <i class="bi bi-cpu text-indigo-400"></i> Basic hardware specifications and operating system version.
+                    </li>
+                </ul>
+                <div class="pt-2 text-xs text-gray-400 flex flex-wrap gap-4">
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline flex items-center gap-1">
+                        <i class="bi bi-box-arrow-up-right"></i> Google Privacy Policy
+                    </a>
+                    <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline flex items-center gap-1">
+                        <i class="bi bi-box-arrow-up-right"></i> How Google Uses Advertising Information
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION 5: USER CONTROLS -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">05</span>
+                    <h3 class="text-lg font-bold text-white">Opting Out and Ad Personalization Controls</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Users can control personalized advertising and reset or delete their advertising identifier at any time through their device settings:
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-gray-300">
+                    <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+                        <strong class="text-white block mb-1 flex items-center gap-1"><i class="fa-brands fa-android text-emerald-400"></i> Android:</strong>
+                        <span>Settings &gt; Google &gt; Ads &gt; "Reset advertising ID" or "Delete advertising ID".</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+                        <strong class="text-white block mb-1 flex items-center gap-1"><i class="fa-brands fa-apple text-gray-300"></i> iOS:</strong>
+                        <span>Settings &gt; Privacy &amp; Security &gt; Tracking / Apple Advertising.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: CHILDREN'S PRIVACY -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">06</span>
+                    <h3 class="text-lg font-bold text-white">Children's Privacy</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    EACert is designed for adult learners, university students, and IT professionals preparing for enterprise architecture certification. The app does not knowingly collect information from children under 13 years of age (or under 16 in the European Union).
+                </p>
+            </div>
+
+            <!-- SECTION 7: CHANGES -->
+            <div class="legal-card space-y-3">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">07</span>
+                    <h3 class="text-lg font-bold text-white">Changes to this Privacy Policy</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    The developer may update this Privacy Policy and Legal Disclaimer from time to time. Any revisions will be published immediately on this page with an updated "Last updated" date.
+                </p>
+            </div>
+
+            <!-- SECTION 8: CONTACT -->
+            <div class="legal-card space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="section-badge">08</span>
+                    <h3 class="text-lg font-bold text-white">Contact & Support</h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    If you have any questions, inquiries, or feedback regarding this Privacy Policy or EACert, please contact:
+                </p>
+                <div class="grid sm:grid-cols-3 gap-3 pt-2">
+                    <div class="p-3.5 rounded-xl bg-gray-900 border border-gray-800 text-xs">
+                        <span class="text-gray-400 block mb-1">Developer</span>
+                        <strong class="text-white">Adrián Cantón Fernández</strong>
+                    </div>
+                    <a href="mailto:adriancanton@gmail.com" class="p-3.5 rounded-xl bg-gray-900 hover:bg-gray-800/80 border border-gray-800 text-xs transition-colors">
+                        <span class="text-gray-400 block mb-1">Email Address</span>
+                        <strong class="text-indigo-400 break-all">adriancanton@gmail.com</strong>
+                    </a>
+                    <a href="https://adrcanfer.github.io" class="p-3.5 rounded-xl bg-gray-900 hover:bg-gray-800/80 border border-gray-800 text-xs transition-colors">
+                        <span class="text-gray-400 block mb-1">Portfolio Website</span>
+                        <strong class="text-white">adrcanfer.github.io</strong>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Return Bar -->
+        <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="./landing.html" class="inline-flex items-center px-6 py-3 rounded-xl font-bold text-sm text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/30 transition-all hover:scale-[1.02]">
+                <i class="bi bi-arrow-left me-2"></i> <span id="back-button-label">Volver a la Landing de EACert</span>
+            </a>
+            <a href="../index.html" class="inline-flex items-center px-5 py-3 rounded-xl font-semibold text-xs text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+                <i class="bi bi-house me-2"></i> Ir al Portfolio Principal
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-[#090d16] py-12 relative z-10 text-gray-400 text-xs mt-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 Adrián Cantón Fernández. Todos los derechos reservados.
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="./landing.html" class="hover:text-indigo-400">EACert</a>
+                <span>•</span>
+                <a href="../index.html" class="hover:text-white">Portfolio</a>
+                <span>•</span>
+                <a href="mailto:adriancanton@gmail.com" class="hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Switcher Script -->
+    <script>
+        function setLanguage(lang) {
+            const esContent = document.getElementById('content-es');
+            const enContent = document.getElementById('content-en');
+            const btnEs = document.getElementById('btn-toggle-es');
+            const btnEn = document.getElementById('btn-toggle-en');
+            const title = document.getElementById('header-title');
+            const badge = document.getElementById('header-badge');
+            const dateLabel = document.getElementById('date-label');
+            const breadcrumb = document.getElementById('breadcrumb-current');
+            const backBtn = document.getElementById('back-button-label');
+
+            const st1 = document.getElementById('stat-title-1');
+            const sd1 = document.getElementById('stat-desc-1');
+            const st2 = document.getElementById('stat-title-2');
+            const sd2 = document.getElementById('stat-desc-2');
+            const st3 = document.getElementById('stat-title-3');
+            const sd3 = document.getElementById('stat-desc-3');
+            const st4 = document.getElementById('stat-title-4');
+            const sd4 = document.getElementById('stat-desc-4');
+
+            if (lang === 'en') {
+                esContent.style.display = 'none';
+                enContent.style.display = 'block';
+                btnEs.classList.remove('active');
+                btnEn.classList.add('active');
+
+                title.textContent = 'Privacy Policy & Legal Terms';
+                badge.textContent = 'EACert — TOGAF® Foundation & Practitioner Prep';
+                dateLabel.textContent = 'Last updated:';
+                breadcrumb.textContent = 'Privacy Policy';
+                backBtn.textContent = 'Back to EACert Landing';
+
+                st1.textContent = 'No Registration';
+                sd1.textContent = 'We never ask for names, emails, or passwords. Instant access.';
+                st2.textContent = 'Local Storage';
+                sd2.textContent = 'Your scores, quizzes, and history stay on your phone.';
+                st3.textContent = 'Google AdMob';
+                sd3.textContent = 'Third-party ads to support store fees and maintenance.';
+                st4.textContent = 'Independent';
+                sd4.textContent = 'TOGAF® is a trademark of The Open Group. Not affiliated.';
+            } else {
+                esContent.style.display = 'block';
+                enContent.style.display = 'none';
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+
+                title.textContent = 'Política de Privacidad y Términos Legales';
+                badge.textContent = 'EACert — App de Preparación TOGAF® Foundation & Practitioner';
+                dateLabel.textContent = 'Última actualización:';
+                breadcrumb.textContent = 'Política de Privacidad';
+                backBtn.textContent = 'Volver a la Landing de EACert';
+
+                st1.textContent = 'Sin Registro';
+                sd1.textContent = 'No solicitamos nombre, correo ni contraseñas. Acceso inmediato.';
+                st2.textContent = 'Almacenamiento Local';
+                sd2.textContent = 'Tus puntuaciones y tests se guardan únicamente en tu teléfono.';
+                st3.textContent = 'Google AdMob';
+                sd3.textContent = 'Anuncios de terceros para cubrir costes de infraestructura y tiendas.';
+                st4.textContent = 'Independiente';
+                sd4.textContent = 'TOGAF® es marca de The Open Group. Sin afiliación oficial.';
+            }
+        }
+
+        (function () {
+            const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+
+            if (langParam === 'en' || (!langParam && !userLang.startsWith('es'))) {
+                setLanguage('en');
+            } else {
+                setLanguage('es');
+            }
+        })();
+    </script>
+</body>
+
+</html>

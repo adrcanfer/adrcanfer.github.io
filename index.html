@@ -1,10 +1,867 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrián Cantón</title>
-    <script src="./assets/js/load.js"></script>
+    <title>Adrián Cantón — Software Architect & Cloud/Backend Engineer</title>
+    <meta name="description" content="Portfolio de Adrián Cantón Fernández: Software Architect e Ingeniero Informático (+7 años de experiencia). Especialista en arquitecturas Cloud/Backend con Java/Spring Boot, sistemas distribuidos y desarrollo multiplataforma (Flutter, Angular, Ionic). Creador de BarBook, ComuniKame, Carfy y EACert.">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Modern Styles -->
+    <link rel="stylesheet" href="./assets/styles/modern.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body></body>
+<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Ambient Glowing Backdrops -->
+    <div class="fixed top-0 left-1/4 w-[450px] h-[450px] glow-primary"></div>
+    <div class="fixed top-1/2 right-10 w-[550px] h-[550px] glow-purple"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./index.html" class="flex items-center space-x-3 group">
+                <div class="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-cyan-400 group-hover:scale-105 transition-transform">
+                    <img src="./assets/images/me.jpeg" alt="Adrián Cantón" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white group-hover:text-indigo-300 transition-colors">Adrián Cantón</span>
+                    <span class="block text-[11px] font-medium text-gray-400">Software Architect & Full-Stack</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-7">
+                <a href="#apps" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors flex items-center gap-1.5">
+                    <span>Mis Apps</span>
+                    <span class="px-1.5 py-0.5 rounded text-[10px] bg-indigo-500/20 text-indigo-300 font-bold">4</span>
+                </a>
+                <a href="#sobre-mi" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Sobre Mí</a>
+                <a href="#certificaciones" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Certificaciones</a>
+                <a href="#experiencia" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Experiencia</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="#contacto" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 shadow-lg shadow-indigo-600/30 transition-all hover:scale-[1.02]">
+                    <i class="bi bi-chat-dots me-1.5"></i> Contactar
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-400 hover:text-white focus:outline-none p-2" aria-label="Abrir menú">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-3 pb-6 space-y-3 bg-[#0f172a]/95 border-b border-gray-800">
+            <a href="#apps" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Mis Apps (BarBook, ComuniKame, Carfy, EACert)</a>
+            <a href="#sobre-mi" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Sobre Mí & Stack</a>
+            <a href="#certificaciones" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Certificaciones Oficiales</a>
+            <a href="#experiencia" class="block py-2 text-sm font-semibold text-gray-300 hover:text-white">Experiencia & Ponencias</a>
+            <a href="#contacto" class="block py-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300">Contacto</a>
+            <a href="./eacert/privacy-policy.html" class="block py-2 text-xs text-gray-400 hover:text-gray-200"><i class="bi bi-shield-check me-1"></i> Política de Privacidad EACert</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- Hero Section (Super Visual) -->
+        <section class="pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-semibold text-indigo-300">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span>Software Architect • Altia</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+                            Arquitectura de software, <br>
+                            <span class="text-gradient-primary">sistemas escalables</span> <br>
+                            y aplicaciones de alto impacto
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            ¡Hola! Soy <strong>Adrián Cantón</strong>, Software Architect e Ingeniero Informático con más de 7 años de experiencia diseñando arquitecturas escalables, sistemas distribuidos y soluciones Cloud-Native. Con un sólido background en el ecosistema <strong>Java &amp; Spring Boot</strong> y liderazgo técnico.
+                        </p>
+
+                        <!-- Highlights Pills -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+                            <span class="tech-pill"><i class="fa-brands fa-java text-rose-400"></i> Java & Spring Boot</span>
+                            <span class="tech-pill"><i class="fa-brands fa-aws text-amber-400"></i> AWS Certified Architect</span>
+                            <span class="tech-pill"><i class="fa-solid fa-dharmachakra text-sky-400"></i> Kubernetes (CKAD)</span>
+                            <span class="tech-pill"><i class="fa-solid fa-layer-group text-indigo-400"></i> Flutter • Angular • Ionic</span>
+                        </div>
+
+                        <!-- Hero CTAs -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#apps" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]">
+                                <i class="fa-solid fa-shapes mr-2.5"></i>
+                                <span>Ver Mis Aplicaciones (4)</span>
+                            </a>
+                        </div>
+
+                        <!-- Social & Direct links -->
+                        <div class="pt-3 flex items-center justify-center lg:justify-start space-x-6 text-gray-400 text-sm">
+                            <a href="https://github.com/adrcanfer" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                                <i class="fa-brands fa-github text-lg"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/adriancanton/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+                                <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
+                            </a>
+                            <a href="mailto:adriancanton@gmail.com" class="hover:text-indigo-300 transition-colors flex items-center gap-1.5">
+                                <i class="bi bi-envelope-fill text-lg"></i> Email
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Card with Photo & Metrics -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-sm">
+                            <div class="absolute -inset-1.5 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-3xl blur-lg opacity-40"></div>
+                            
+                            <div class="relative glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-20 h-20 rounded-2xl overflow-hidden border-2 border-indigo-400/40 shadow-md">
+                                        <img src="./assets/images/me.jpeg" alt="Adrián Cantón" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Adrián Cantón</h3>
+                                        <p class="text-xs text-indigo-400 font-semibold">Software Architect</p>
+                                        <p class="text-[11px] text-gray-400 mt-0.5">Universidad de Sevilla (2019)</p>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                        <span class="text-2xl font-extrabold text-white block">+7 Años</span>
+                                        <span class="text-xs text-gray-400">Trayectoria Profesional</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                        <span class="text-2xl font-extrabold text-indigo-400 block">4 Apps</span>
+                                        <span class="text-xs text-gray-400">Mobile & Web Apps</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                        <span class="text-2xl font-extrabold text-amber-400 block">6 Certs</span>
+                                        <span class="text-xs text-gray-400">AWS, K8S, Scrum, ITIL</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                        <span class="text-2xl font-extrabold text-emerald-400 block">+150 hrs</span>
+                                        <span class="text-xs text-gray-400">Formación & Ponencias</span>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-2xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-indigo-200 flex items-center justify-between">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-briefcase text-indigo-400"></i> Altia • Software Architect
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold text-[10px]">Actualidad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: MIS APLICACIONES (4 Apps) -->
+        <section id="apps" class="py-20 border-t border-gray-800 bg-[#090d16]/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Productos Digitales Propios</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                        Mis Aplicaciones
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        Aplicaciones multiplataforma desarrolladas con <strong>Flutter</strong> y <strong>Angular / Ionic</strong>, combinando arquitecturas limpias, rendimiento y diseño centrado en el usuario.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <!-- APP 1: BARBOOK (Web & Mobile) -->
+                    <div class="glass-card p-8 rounded-3xl border border-amber-500/30 relative overflow-hidden flex flex-col justify-between group hover:border-amber-400 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-44 h-44 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                                    <img src="./assets/images/apps/barbook.png" alt="BarBook App Icon" class="w-full h-full object-contain">
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                                    Web • iOS • Android
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                                BarBook
+                            </h3>
+                            <p class="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-4">
+                                Agenda de Bares & Red Social Foodie
+                            </p>
+
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Tu agenda gastronómica y de ocio. Permite descubrir y guardar bares, organizándolos en listas públicas, privadas o colaborativas. Una red social para foodies donde los usuarios pueden compartir sus experiencias, subir fotos y dejar comentarios en cada local.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-pill text-xs">Web & Mobile</span>
+                                <span class="tech-pill text-xs">Listas Colaborativas</span>
+                                <span class="tech-pill text-xs">Social Foodies</span>
+                                <span class="tech-pill text-xs">Fotos & Reseñas</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <a href="https://www.barbook.es/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-amber-600 hover:bg-amber-500 transition-all shadow-md shadow-amber-600/30">
+                                <span>Ver BarBook</span>
+                                <i class="bi bi-box-arrow-up-right ms-2"></i>
+                            </a>
+                            <div class="flex flex-wrap items-center gap-2.5 text-xs">
+                                <a href="https://apps.apple.com/es/app/barbook-agenda-de-bares/id6740002036" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-apple text-sm"></i> App Store
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.barbook" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/20 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-google-play text-xs"></i> Play Store
+                                </a>
+                                <a href="https://www.barbook.es/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-amber-300 transition-colors flex items-center gap-1 ms-1">
+                                    <i class="bi bi-shield-check"></i> Privacidad
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APP 2: COMUNIKAME (Web & Mobile) -->
+                    <div class="glass-card p-8 rounded-3xl border border-emerald-500/30 relative overflow-hidden flex flex-col justify-between group hover:border-emerald-400 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-44 h-44 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl shadow-xl shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                                    <img src="./assets/images/apps/comunikame.png" alt="ComuniKame App Icon" class="w-full h-full object-contain">
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                    Web • iOS • Android
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                                ComuniKame
+                            </h3>
+                            <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-4">
+                                Canal de Comunicación & Avisos Unidireccionales
+                            </p>
+
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Plataforma de difusión y mensajería unidireccional para colectivos y entidades. Permite a organizaciones (ayuntamientos, clubes deportivos, hermandades, colegios o comunidades de vecinos) registrarse y emitir bandos, noticias y avisos instantáneos a sus seguidores, vecinos o miembros suscritos.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-pill text-xs">Angular</span>
+                                <span class="tech-pill text-xs">Ionic</span>
+                                <span class="tech-pill text-xs">Canales de Avisos</span>
+                                <span class="tech-pill text-xs">Notificaciones Push</span>
+                                <span class="tech-pill text-xs">Entidades & Vecinos</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <a href="https://www.comunikame.es" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-emerald-600 hover:bg-emerald-500 transition-all shadow-md shadow-emerald-600/30">
+                                <span>Ver ComuniKame</span>
+                                <i class="bi bi-box-arrow-up-right ms-2"></i>
+                            </a>
+                            <div class="flex flex-wrap items-center gap-2.5 text-xs">
+                                <a href="https://apps.apple.com/es/app/comunikame/id6751772884" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-apple text-sm"></i> App Store
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.comunikame" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/20 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-google-play text-xs"></i> Play Store
+                                </a>
+                                <a href="https://www.comunikame.es/web/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-300 transition-colors flex items-center gap-1 ms-1">
+                                    <i class="bi bi-shield-check"></i> Privacidad
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APP 3: CARFY (Aparca Gratis & Mapa Colaborativo) -->
+                    <div class="glass-card p-8 rounded-3xl border border-sky-500/30 relative overflow-hidden flex flex-col justify-between group hover:border-sky-400 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-44 h-44 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 overflow-hidden">
+                                    <img src="./assets/images/apps/carfy.png" alt="Carfy App Icon" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                                    iOS • Android
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">
+                                Carfy
+                            </h3>
+                            <p class="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-4">
+                                Aparca Gratis & Mapa Colaborativo de Parkings
+                            </p>
+
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Aplicación colaborativa diseñada por y para conductores que quieren dejar de perder tiempo y dinero en parkings caros. Explora un mapa interactivo inteligente con código de colores (verde 100% gratis, amarillo low-cost y morado pendiente), reporta sitios en tiempo real y gana puntos en el sistema de Karma.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-pill text-xs">Flutter</span>
+                                <span class="tech-pill text-xs">Mapbox Maps</span>
+                                <span class="tech-pill text-xs">Aparcamiento Gratis</span>
+                                <span class="tech-pill text-xs">Sistema de Karma</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <a href="./carfy/landing.html" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-sky-600 hover:bg-sky-500 transition-all shadow-md shadow-sky-600/30">
+                                <span>Ver Carfy</span>
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <div class="flex flex-wrap items-center gap-2.5 text-xs">
+                                <a href="https://apps.apple.com/ec/app/carfy-aparca-gratis/id6762514729" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-apple text-sm"></i> App Store
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.adrcanfer.carfy" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/20 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-brands fa-google-play text-xs"></i> Play Store
+                                </a>
+                                <a href="./carfy/privacy-policy.html" class="text-gray-400 hover:text-sky-300 transition-colors flex items-center gap-1 ms-1">
+                                    <i class="bi bi-shield-check"></i> Privacidad
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APP 4: EACERT (Flutter - App Independiente) -->
+                    <div class="glass-card p-8 rounded-3xl border border-cyan-500/30 relative overflow-hidden flex flex-col justify-between group hover:border-cyan-400 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-44 h-44 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl shadow-xl shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 overflow-hidden">
+                                    <img src="./assets/images/apps/eacert.png" alt="EACert App Icon" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                                        iOS • Android
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                                EACert
+                            </h3>
+                            <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-4">
+                                Banco de preguntas y escenarios
+                            </p>
+
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                App móvil independiente diseñada para facilitar el estudio y preparación de las certificaciones TOGAF® (Foundation y Practitioner). Incluye cientos de preguntas tipo test, simulador de examen contrarreloj y explicaciones razonadas paso a paso generadas con asistencia de IA y recopiladas de fuentes públicas de estudio (FreeCram y repositorios formativos).
+                            </p>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-[11px] text-gray-400 mb-6 leading-relaxed">
+                                <strong class="text-gray-300 block mb-0.5"><i class="bi bi-info-circle me-1 text-cyan-400"></i> Aviso independiente:</strong>
+                                Aplicación formativa no oficial, no afiliada ni respaldada por The Open Group. TOGAF® es marca registrada de The Open Group.
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-pill text-xs">Flutter & Dart</span>
+                                <span class="tech-pill text-xs">TOGAF® Foundation</span>
+                                <span class="tech-pill text-xs">TOGAF® Practitioner</span>
+                                <span class="tech-pill text-xs">Simulacro Examen</span>
+                                <span class="tech-pill text-xs">Contenido IA & Público</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <a href="./eacert/landing.html" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-cyan-600 hover:bg-cyan-500 transition-all shadow-md shadow-cyan-600/30">
+                                <span>Ver EACert</span>
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <div class="flex flex-wrap items-center gap-2 text-xs">
+                                <span class="px-2.5 py-1.5 rounded-lg bg-white/5 text-gray-400 border border-white/10 flex items-center gap-1.5" title="En proceso de publicación">
+                                    <i class="fa-brands fa-apple text-sm"></i> iOS (Próximamente)
+                                </span>
+                                <span class="px-2.5 py-1.5 rounded-lg bg-white/5 text-gray-400 border border-white/10 flex items-center gap-1.5" title="En proceso de publicación">
+                                    <i class="fa-brands fa-google-play text-xs"></i> Android (Próximamente)
+                                </span>
+                                <a href="./eacert/privacy-policy.html" class="text-gray-400 hover:text-cyan-300 transition-colors flex items-center gap-1 ms-1">
+                                    <i class="bi bi-shield-check"></i> Privacidad
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SOBRE MÍ & STACK TECNOLÓGICO -->
+        <section id="sobre-mi" class="py-20 border-t border-gray-800 bg-[#090d16]/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Trayectoria & Filosofía</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                            Más de 7 años creando software y liderando equipos
+                        </h2>
+
+                        <div class="text-gray-300 text-sm sm:text-base space-y-4 leading-relaxed">
+                            <p>
+                                Me gradué en <strong>Ingeniería Informática</strong> (especialidad en Ingeniería del Software) por la <strong>Universidad de Sevilla</strong> en 2019. Cuento con más de <strong>7 años de experiencia profesional</strong> en el sector tecnológico, habiendo desarrollado mi carrera durante <strong>5 años en Deloitte</strong> y actualmente en <strong>Altia</strong> (2 años), donde ejerzo como <em>Software Architect</em>.
+                            </p>
+                            <p>
+                                Mi núcleo de especialización y trayectoria técnica está fuertemente arraigado en el <strong>ecosistema Java</strong> (Spring Boot, microservicios, APIs y sistemas distribuidos). A lo largo de mi trayectoria he tenido la responsabilidad de definir arquitecturas empresariales y liderar equipos técnicos en sectores estratégicos y de alta regulación como la <strong>banca, la sanidad y la administración pública</strong>, guiando implementaciones cloud-native y despliegues en Kubernetes.
+                            </p>
+                            <p>
+                                En paralelo a mi actividad corporativa, he creado mis propias aplicaciones tanto con <strong>Angular e Ionic</strong> (BarBook, ComuniKame) como con <strong>Flutter</strong> (Carfy, EACert), además de compartir mis conocimientos como Instructor de Programación y ponente.
+                            </p>
+                        </div>
+
+                        <div class="pt-2 flex flex-wrap gap-3">
+                            <a href="mailto:adriancanton@gmail.com" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-white/10 hover:bg-white/20 text-white transition-all">
+                                <i class="bi bi-envelope me-2 text-indigo-400"></i> adriancanton@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Visual Matrix -->
+                    <div class="lg:col-span-6">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-code text-indigo-400"></i> Stack Tecnológico
+                            </h3>
+
+                            <!-- Category 1: Backend & Java -->
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold uppercase tracking-wider text-cyan-300">Backend, Java & APIs</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-pill"><i class="fa-brands fa-java text-rose-400"></i> Java (8, 11, 17, 21)</span>
+                                    <span class="tech-pill">Spring Boot</span>
+                                    <span class="tech-pill">Spring Security & Data</span>
+                                    <span class="tech-pill"><i class="fa-brands fa-node text-emerald-400"></i> Node.js</span>
+                                    <span class="tech-pill">PostgreSQL</span>
+                                    <span class="tech-pill">DynamoDB</span>
+                                    <span class="tech-pill">Apache Kafka & ActiveMQ</span>
+                                </div>
+                            </div>
+
+                            <!-- Category 2: Multiplatform & Frontend -->
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold uppercase tracking-wider text-indigo-300">Desarrollo Móvil & Frontend</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-pill"><i class="fa-solid fa-mobile-screen text-indigo-400"></i> Flutter & Dart</span>
+                                    <span class="tech-pill"><i class="fa-brands fa-angular text-rose-400"></i> Angular</span>
+                                    <span class="tech-pill"><i class="fa-solid fa-atom text-sky-400"></i> Ionic</span>
+                                    <span class="tech-pill"><i class="fa-brands fa-js text-amber-400"></i> TypeScript / JS</span>
+                                    <span class="tech-pill">Android (Java/Kotlin)</span>
+                                    <span class="tech-pill">iOS (Swift)</span>
+                                </div>
+                            </div>
+
+                            <!-- Category 3 -->
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold uppercase tracking-wider text-amber-300">Cloud, DevOps & Contenedores</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-pill"><i class="fa-brands fa-aws text-amber-400"></i> AWS (Lambda, S3, API GW, CDK)</span>
+                                    <span class="tech-pill"><i class="fa-solid fa-dharmachakra text-sky-400"></i> Kubernetes</span>
+                                    <span class="tech-pill"><i class="fa-brands fa-docker text-sky-400"></i> Docker & Podman</span>
+                                    <span class="tech-pill">Helm</span>
+                                    <span class="tech-pill">Terraform</span>
+                                    <span class="tech-pill">Firebase</span>
+                                </div>
+                            </div>
+
+                            <!-- Category 4 -->
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold uppercase tracking-wider text-purple-300">Arquitectura, Gestión & Agile</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-pill">TOGAF® Enterprise Architecture</span>
+                                    <span class="tech-pill">Scrum (PSM, PSPO, PSD)</span>
+                                    <span class="tech-pill">ITIL v4</span>
+                                    <span class="tech-pill">Liderazgo de Equipos</span>
+                                    <span class="tech-pill">CI/CD & Observabilidad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CERTIFICACIONES OFICIALES (Visual Badges) -->
+        <section id="certificaciones" class="py-20 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Garantía de conocimiento</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                        Certificaciones Oficiales
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        Acreditaciones internacionales que respaldan mis competencias en arquitectura en la nube, orquestación de contenedores, frameworks ágiles y gestión de servicios.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    
+                    <!-- AWS -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/aws.png" alt="AWS Solutions Architect" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">AWS Certified</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">Solution Architect Associate</p>
+                        </div>
+                    </div>
+
+                    <!-- CKAD -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/ckad.png" alt="Kubernetes CKAD" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">CKAD</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">Certified Kubernetes App Dev</p>
+                        </div>
+                    </div>
+
+                    <!-- PSM -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/psm.png" alt="PSM Scrum.org" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">PSM I</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">Professional Scrum Master</p>
+                        </div>
+                    </div>
+
+                    <!-- PSPO -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/pspo.png" alt="PSPO Scrum.org" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">PSPO I</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">Professional Product Owner</p>
+                        </div>
+                    </div>
+
+                    <!-- PSD -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/psd.png" alt="PSD Scrum.org" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">PSD I</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">Professional Scrum Developer</p>
+                        </div>
+                    </div>
+
+                    <!-- ITIL -->
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center text-center justify-between group">
+                        <div class="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <img src="./assets/images/badge/itil.png" alt="ITIL v4" class="max-h-20 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">ITIL v4</h4>
+                            <p class="text-[11px] text-gray-400 mt-1">IT Service Management</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: EXPERIENCIA & TECH TALKS -->
+        <section id="experiencia" class="py-20 border-t border-gray-800 bg-[#090d16]/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Comunidad & Experiencia</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                        Trayectoria & Ponencias
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        Comprometido con la difusión técnica en universidades, conferencias y empresas.
+                    </p>
+                </div>
+
+                <!-- Career Timeline Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    
+                    <!-- ALTIA -->
+                    <div class="glass-card p-7 rounded-3xl space-y-4 border border-indigo-500/30 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">2024 — Actualidad</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">2 Años • Actual</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Altia</h3>
+                                <p class="text-sm font-semibold text-indigo-300 mt-0.5">Software Architect</p>
+                            </div>
+                            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                Definición y gobierno de arquitectura de software para soluciones empresariales de gran escala. Diseño de arquitecturas cloud-native y microservicios, directrices técnicas, integración de sistemas complejos y liderazgo técnico en proyectos estratégicos.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+                            <span class="tech-pill text-[11px]">Software Architecture</span>
+                            <span class="tech-pill text-[11px]">Microservicios</span>
+                            <span class="tech-pill text-[11px]">Cloud Native</span>
+                            <span class="tech-pill text-[11px]">Java / Spring</span>
+                            <span class="tech-pill text-[11px]">TOGAF® / Gobierno</span>
+                        </div>
+                    </div>
+
+                    <!-- DELOITTE -->
+                    <div class="glass-card p-7 rounded-3xl space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">2019 — 2024</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">5 Años</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Deloitte</h3>
+                                <p class="text-sm font-semibold text-gray-300 mt-0.5">Senior Delivery Consultant • Delivery Consultant • Analyst</p>
+                            </div>
+                            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                5 años de trayectoria liderando y desarrollando soluciones tecnológicas en proyectos multiplataforma para clientes estratégicos de sectores de máxima exigencia (banca, sanidad y sector público). Diseño de arquitecturas, integración de sistemas complejos, contenedores (Docker/Podman), orquestación con Kubernetes (OpenShift) e impartición de workshops formativos.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+                            <span class="tech-pill text-[11px]">Java / Spring</span>
+                            <span class="tech-pill text-[11px]">Docker / Podman</span>
+                            <span class="tech-pill text-[11px]">Kubernetes (CKAD)</span>
+                            <span class="tech-pill text-[11px]">Angular</span>
+                            <span class="tech-pill text-[11px]">Liderazgo</span>
+                        </div>
+                    </div>
+
+                    <!-- SUPERPROF -->
+                    <div class="glass-card p-7 rounded-3xl space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">2022 — Actualidad</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">Educación & Mentoring</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Superprof & Clases Independientes</h3>
+                                <p class="text-sm font-semibold text-gray-300 mt-0.5">Profesor particular de programación y arquitectura</p>
+                            </div>
+                            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                Más de 100 horas de clases particulares a desarrolladores y estudiantes en Java, Spring Boot, Angular y Flutter. Fomento de metodologías pedagógicas orientadas a la resolución de problemas reales y buenas prácticas.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-800/80 flex flex-wrap gap-1.5">
+                            <span class="tech-pill text-[11px]">Java & Spring Boot</span>
+                            <span class="tech-pill text-[11px]">Flutter & Dart</span>
+                            <span class="tech-pill text-[11px]">Angular</span>
+                            <span class="tech-pill text-[11px]">Mentoría</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Talks gallery -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-microphone-lines text-indigo-400"></i> Charlas y Workshops Impartidos
+                    </h3>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        
+                        <div class="glass-card rounded-2xl overflow-hidden group">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="./assets/images/techtalks/us.jpg" alt="Charla Universidad de Sevilla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] text-white font-mono">2024</span>
+                            </div>
+                            <div class="p-4 space-y-1">
+                                <h4 class="text-sm font-bold text-white">Podman y DevContainers</h4>
+                                <p class="text-xs text-gray-400">Universidad de Sevilla</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl overflow-hidden group">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="./assets/images/techtalks/safa.jpg" alt="Taller SAFA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] text-white font-mono">2023</span>
+                            </div>
+                            <div class="p-4 space-y-1">
+                                <h4 class="text-sm font-bold text-white">Taller de Docker</h4>
+                                <p class="text-xs text-gray-400">Colegio SAFA (Sevilla)</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl overflow-hidden group">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="./assets/images/techtalks/th.jpg" alt="Podman Deloitte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] text-white font-mono">2023</span>
+                            </div>
+                            <div class="p-4 space-y-1">
+                                <h4 class="text-sm font-bold text-white">Introducción a Podman</h4>
+                                <p class="text-xs text-gray-400">Deloitte (Zaragoza)</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl overflow-hidden group">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="./assets/images/techtalks/taller-docker.jpg" alt="Master Class Docker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] text-white font-mono">2023</span>
+                            </div>
+                            <div class="p-4 space-y-1">
+                                <h4 class="text-sm font-bold text-white">Master Class Docker & Compose</h4>
+                                <p class="text-xs text-gray-400">Deloitte (España)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACTO (Get in touch) -->
+        <section id="contacto" class="py-20 border-t border-gray-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+                
+                <div class="glass-card p-10 sm:p-14 rounded-3xl border border-indigo-500/30 relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-72 h-72 glow-primary"></div>
+                    
+                    <div class="relative z-10 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">¿Hablamos?</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+                            ¿Tienes una idea o proyecto en mente?
+                        </h2>
+                        <p class="text-gray-300 max-w-xl mx-auto text-base">
+                            Tanto si deseas conectar profesionalmente, conversar sobre arquitectura de software, backend con Java o desarrollo multiplataforma, estaré encantado de hablar contigo.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 pt-6">
+                            
+                            <a href="mailto:adriancanton@gmail.com" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-indigo-400/40 transition-all flex flex-col items-center text-center group">
+                                <i class="bi bi-envelope-fill text-2xl text-indigo-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs text-gray-400">Correo Electrónico</span>
+                                <span class="text-xs font-bold text-white mt-1 break-all">adriancanton@gmail.com</span>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/adriancanton/" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-sky-400/40 transition-all flex flex-col items-center text-center group">
+                                <i class="bi bi-linkedin text-2xl text-sky-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs text-gray-400">LinkedIn</span>
+                                <span class="text-xs font-bold text-white mt-1">@adriancanton</span>
+                            </a>
+
+                            <a href="https://github.com/adrcanfer" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/40 transition-all flex flex-col items-center text-center group">
+                                <i class="bi bi-github text-2xl text-purple-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs text-gray-400">GitHub</span>
+                                <span class="text-xs font-bold text-white mt-1">@adrcanfer</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-[#090d16] py-12 relative z-10 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-lg font-bold text-white">Adrián Cantón Fernández</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-md leading-relaxed">
+                        Software Architect e Ingeniero Informático especializado en arquitecturas Cloud/Backend empresariales con Java/Spring y desarrollo multiplataforma (Flutter, Angular, Ionic). Creador de soluciones tecnológicas independientes de alto impacto.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Mis 4 Apps</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="https://www.barbook.es/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors font-semibold">BarBook — Web & Apps</a></li>
+                        <li><a href="https://www.comunikame.es" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">ComuniKame — Avisos & Canales</a></li>
+                        <li><a href="./carfy/landing.html" class="hover:text-sky-400 transition-colors">Carfy — Aparca Gratis</a></li>
+                        <li><a href="./eacert/landing.html" class="hover:text-indigo-400 transition-colors">EACert — Prep TOGAF®</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Políticas de Privacidad</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="https://www.barbook.es/privacy-policy" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">Privacidad BarBook</a></li>
+                        <li><a href="https://www.comunikame.es/web/privacy-policy" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Privacidad ComuniKame</a></li>
+                        <li><a href="./carfy/privacy-policy.html" class="hover:text-sky-400 transition-colors">Privacidad Carfy</a></li>
+                        <li><a href="./eacert/privacy-policy.html" class="hover:text-indigo-400 transition-colors">Privacidad EACert</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-gray-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>
+                    © 2026 Adrián Cantón Fernández. Todos los derechos reservados.
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="mailto:adriancanton@gmail.com" class="hover:text-gray-300">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
 </html>
